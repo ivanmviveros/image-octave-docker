@@ -16,8 +16,7 @@ RUN chown -R octave:octave /home/octave/
 USER octave
 WORKDIR /home/octave
 
-ADD install_image.sh install_image.sh
-RUN sh ./install_image.sh && rm install_image.sh
+RUN octave install-image.m
 
 VOLUME ["/source"]
 ENTRYPOINT ["octave"]
